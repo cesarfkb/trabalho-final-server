@@ -205,13 +205,6 @@ public class Server {
         }
     }
 
-    private byte[] criarArrayDados(String dado) {
-        byte[] tamanhoByteArray = new byte[] { (byte) dado.length() };
-        byte[] byteArray = Arrays.copyOf(tamanhoByteArray, tamanhoByteArray.length + dado.getBytes().length);
-        System.arraycopy(dado.getBytes(), 0, byteArray, tamanhoByteArray.length, dado.getBytes().length);
-        return byteArray;
-    }
-
     private void salvarConteudo(SocketClient cliente) {
         byte[] buffer;
         try {
